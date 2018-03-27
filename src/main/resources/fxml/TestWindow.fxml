@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.geometry.Insets?>
+<StackPane prefHeight="350.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/8.0.121"
+           xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.olszak.michal.detector.view.TestScreenController">
+    <Button mnemonicParsing="false" text="Button" StackPane.alignment="CENTER" onAction="#onButtonClick"/>
+    <Label fx:id="firstLabel" text="Label" StackPane.alignment="TOP_CENTER">
+        <StackPane.margin>
+            <Insets bottom="6.0" left="6.0" right="6.0" top="6.0"/>
+        </StackPane.margin>
+    </Label>
+</StackPane>

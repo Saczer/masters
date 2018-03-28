@@ -11,8 +11,4 @@ interface ScreenProvider {
 
     fun getNode(fxml: String, consumer: Consumer<ScreenController>) : Node
 
-    fun getNode(fxml: String, resourceBundle: ResourceBundle) : Node
-
-    fun getNode(fxml: String, resourceBundle: ResourceBundle, consumer: Consumer<ScreenController>) : Node
-
 }

@@ -1,6 +1,7 @@
 package pl.olszak.michal.detector.navigation
 
 import javafx.util.Callback
+import org.slf4j.LoggerFactory
 import pl.olszak.michal.detector.view.ScreenController
 import javax.inject.Inject
 import javax.inject.Provider
@@ -12,6 +13,7 @@ class DetectorViewFactory @Inject constructor(
 ) : Callback<Class<out ScreenController>, ScreenController> {
 
     override fun call(param: Class<out ScreenController>?): ScreenController {
+        logger.debug("Calling factory for $param")
         var creator: Provider<out ScreenController>? = creators[param]
         if (creator == null) {
             for ((key, value) in creators) {
@@ -23,10 +25,16 @@ class DetectorViewFactory @Inject constructor(
         }
 
         if (creator == null) {
+            logger.error("Could not retrieve ScreenController for $param")
             throw IllegalArgumentException("Unknown model class $param")
         }
 
+        logger.debug("Successfully retrieved ScreenController for $param")
         return creator.get()
+    }
+
+    companion object {
+        private val logger = LoggerFactory.getLogger(DetectorViewFactory::class.java)
     }
 
 }

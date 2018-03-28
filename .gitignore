@@ -61,6 +61,7 @@ fabric.properties
 
 .idea/
 build/
+masters_application.log
 
 ### Kotlin ###
 # Compiled class file

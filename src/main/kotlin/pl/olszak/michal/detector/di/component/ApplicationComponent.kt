@@ -5,13 +5,15 @@ import dagger.Component
 import javafx.stage.Stage
 import pl.olszak.michal.detector.Detector
 import pl.olszak.michal.detector.di.module.ApplicationModule
+import pl.olszak.michal.detector.di.module.ConcurrentModule
 import pl.olszak.michal.detector.di.module.ViewFactoryModule
 import javax.inject.Singleton
 
 @Singleton
 @Component(modules = [
     ApplicationModule::class,
-    ViewFactoryModule::class])
+    ViewFactoryModule::class,
+    ConcurrentModule::class])
 interface ApplicationComponent {
 
     @Component.Builder

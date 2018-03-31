@@ -15,6 +15,7 @@ class DetectorScreenProvider @Inject constructor(private val detectorViewFactory
     override fun getNode(fxml: String, consumer: Consumer<ScreenController>) : Node =
             get(FXMLLoader(javaClass.getResource(fxml)), consumer)
 
+    @Suppress("UNCHECKED_CAST")
     private fun get(loader: FXMLLoader, consumer: Consumer<ScreenController>? = null): Node {
         loader.setControllerFactory {
             detectorViewFactory.call(it as Class<out ScreenController>?)

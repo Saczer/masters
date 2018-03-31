@@ -5,7 +5,7 @@ import dagger.Module
 import dagger.multibindings.IntoMap
 import pl.olszak.michal.detector.di.ScreenKey
 import pl.olszak.michal.detector.view.ScreenController
-import pl.olszak.michal.detector.view.TestScreenController
+import pl.olszak.michal.detector.view.screen.TestScreenController
 
 @Module
 abstract class ViewFactoryModule {

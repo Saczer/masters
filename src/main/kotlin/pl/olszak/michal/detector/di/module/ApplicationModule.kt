@@ -4,6 +4,9 @@ import dagger.Binds
 import dagger.Module
 import dagger.Provides
 import javafx.stage.Stage
+import nu.pattern.OpenCV
+import org.opencv.core.Core
+import org.slf4j.LoggerFactory
 import pl.olszak.michal.detector.navigation.DetectorScreenProvider
 import pl.olszak.michal.detector.navigation.DetectorNavigator
 import pl.olszak.michal.detector.navigation.Navigator
@@ -21,8 +24,8 @@ abstract class ApplicationModule {
     companion object {
 
         @Provides
-        @JvmStatic
         @Singleton
+        @JvmStatic
         fun provideNavigator(stage: Stage, screenProvider: ScreenProvider): Navigator {
             return DetectorNavigator(stage, screenProvider)
         }

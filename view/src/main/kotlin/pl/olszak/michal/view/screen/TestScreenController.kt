@@ -13,6 +13,6 @@ open class TestScreenController @Inject constructor(
     lateinit var firstLabel: Label
 
     fun onButtonClick() {
-        firstLabel.text = "chuj"
+        firstLabel.text = "test test"
     }
 }

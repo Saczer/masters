@@ -7,5 +7,4 @@ interface MastersSchedulers {
     fun io() : Scheduler
 
     fun ui() : Scheduler
-
 }

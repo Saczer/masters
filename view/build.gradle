@@ -6,6 +6,7 @@ repositories {
 
 dependencies {
     implementation project(':base')
+
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlinVersion"
     implementation "org.slf4j:slf4j-api:$slf4jVersion"
     implementation "javax.inject:javax.inject:$javaxInjectVersion"

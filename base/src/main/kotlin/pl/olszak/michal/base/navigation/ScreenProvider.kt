@@ -8,5 +8,4 @@ interface ScreenProvider {
     fun getNode(fxml: String): Node
 
     fun getNode(fxml: String, consumer: Consumer<ScreenController>) : Node
-
 }

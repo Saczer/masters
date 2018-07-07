@@ -14,5 +14,4 @@ abstract class ViewFactoryModule {
     @IntoMap
     @ScreenKey(TestScreenController::class)
     abstract fun bindTestScreenController(testScreenController: TestScreenController): ScreenController
-
 }

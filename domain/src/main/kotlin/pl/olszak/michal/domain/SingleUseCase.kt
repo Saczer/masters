@@ -17,5 +17,4 @@ abstract class SingleUseCase<T, in Params> constructor(private val schedulers: M
 
         addDisposable(single.subscribeWith(singleObserver))
     }
-
 }

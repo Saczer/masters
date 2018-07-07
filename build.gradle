@@ -9,8 +9,8 @@ buildscript {
     }
 }
 
-group 'pl.olszak.michal'
-version '0.0.1'
+group "pl.olszak.michal"
+version "0.0.1"
 
 repositories {
     mavenCentral()

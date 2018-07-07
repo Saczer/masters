@@ -1,7 +1,7 @@
 package pl.olszak.michal.view.navigation
 
 import javafx.util.Callback
-import pl.olszak.michal.base.logger.getLogger
+import pl.olszak.michal.base.logger.logger
 import pl.olszak.michal.base.navigation.ScreenController
 import javax.inject.Inject
 import javax.inject.Provider
@@ -13,7 +13,7 @@ class DetectorViewFactory @Inject constructor(
 ) : Callback<Class<out ScreenController>, ScreenController> {
 
     companion object {
-        private val logger = getLogger(DetectorViewFactory::class.java)
+        private val logger by logger()
     }
 
     override fun call(param: Class<out ScreenController>?): ScreenController {
@@ -33,5 +33,4 @@ class DetectorViewFactory @Inject constructor(
         }
         return creator.get()
     }
-
 }

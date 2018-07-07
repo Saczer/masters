@@ -4,19 +4,17 @@ import javafx.scene.Node
 import javafx.scene.Scene
 import javafx.scene.layout.StackPane
 import javafx.stage.Stage
-import pl.olszak.michal.base.navigation.Navigator
-import pl.olszak.michal.base.navigation.ScreenProvider
+import pl.olszak.michal.base.navigation.NodeController
+import javax.inject.Inject
 
-class DetectorNavigator constructor(
-        stage: Stage,
-        private val fxmlProvider: ScreenProvider) : Navigator {
+class DetectorNodeController @Inject constructor(stage: Stage) : NodeController {
 
     companion object {
         private const val WIDTH = 500.0
         private const val HEIGHT = 350.0
     }
 
-    private val root: StackPane = StackPane()
+    private val root = StackPane()
 
     init {
         val scene = Scene(root)
@@ -31,13 +29,7 @@ class DetectorNavigator constructor(
         }.show()
     }
 
-    private fun setNode(node: Node) {
+    override fun setNode(node: Node) {
         root.children.setAll(node)
     }
-
-    override fun navigateToTestWindow() {
-        val node = fxmlProvider.getNode("/fxml/TestWindow.fxml")
-        setNode(node)
-    }
-
 }

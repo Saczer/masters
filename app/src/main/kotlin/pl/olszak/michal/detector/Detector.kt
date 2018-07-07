@@ -5,8 +5,8 @@ import javafx.application.Platform
 import javafx.stage.Stage
 import nu.pattern.OpenCV
 import org.opencv.core.Core
-import org.slf4j.LoggerFactory
-import pl.olszak.michal.base.navigation.Navigator
+import pl.olszak.michal.base.logger.logger
+import pl.olszak.michal.base.navigation.InitialNavigator
 import pl.olszak.michal.detector.di.component.ApplicationComponent
 import pl.olszak.michal.detector.di.component.DaggerApplicationComponent
 import javax.inject.Inject
@@ -14,7 +14,7 @@ import javax.inject.Inject
 class Detector : Application() {
 
     @Inject
-    lateinit var navigator: Navigator
+    lateinit var initialNavigator: InitialNavigator
 
     private fun component(stage: Stage): ApplicationComponent {
         return DaggerApplicationComponent.builder()
@@ -26,12 +26,12 @@ class Detector : Application() {
         Platform.setImplicitExit(true)
         val component = component(primaryStage)
         component.inject(this)
-        navigator.navigateToTestWindow()
+        initialNavigator.navigateToTestWindow()
     }
 
     companion object {
 
-        private val logger = LoggerFactory.getLogger(Detector::class.java)
+        private val logger by logger()
 
         init {
             logger.debug("loading OpenCV")

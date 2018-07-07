@@ -6,6 +6,7 @@ import javafx.stage.Stage
 import pl.olszak.michal.detector.Detector
 import pl.olszak.michal.detector.di.module.ApplicationModule
 import pl.olszak.michal.detector.di.module.ConcurrentModule
+import pl.olszak.michal.detector.di.module.NavigationModule
 import pl.olszak.michal.detector.di.module.ViewFactoryModule
 import javax.inject.Singleton
 
@@ -13,6 +14,7 @@ import javax.inject.Singleton
 @Component(modules = [
     ApplicationModule::class,
     ViewFactoryModule::class,
+    NavigationModule::class,
     ConcurrentModule::class])
 interface ApplicationComponent {
 
@@ -25,5 +27,4 @@ interface ApplicationComponent {
     }
 
     fun inject(detector: Detector)
-
 }

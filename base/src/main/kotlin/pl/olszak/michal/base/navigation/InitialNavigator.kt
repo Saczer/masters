@@ -1,7 +1,6 @@
 package pl.olszak.michal.base.navigation
 
-interface Navigator {
+interface InitialNavigator {
 
     fun navigateToTestWindow()
-
 }

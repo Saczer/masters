@@ -20,5 +20,4 @@ abstract class FlowableUseCase<T, in Params> constructor(private val schedulers:
                 .observeOn(schedulers.ui())
         addDisposable(flowable.subscribeWith(flowableSubscriber))
     }
-
 }

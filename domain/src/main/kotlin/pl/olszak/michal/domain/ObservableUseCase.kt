@@ -15,5 +15,4 @@ abstract class ObservableUseCase<T, in Params> constructor(private val scheduler
                 .observeOn(schedulers.ui())
         addDisposable(observable.subscribeWith(disposableObserver))
     }
-
 }

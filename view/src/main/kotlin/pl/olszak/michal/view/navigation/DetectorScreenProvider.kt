@@ -3,9 +3,9 @@ package pl.olszak.michal.view.navigation
 import javafx.fxml.FXMLLoader
 import javafx.scene.Node
 import javafx.scene.Parent
-import pl.olszak.michal.base.logger.getLogger
-import pl.olszak.michal.base.navigation.ScreenProvider
+import pl.olszak.michal.base.logger.logger
 import pl.olszak.michal.base.navigation.ScreenController
+import pl.olszak.michal.base.navigation.ScreenProvider
 import java.io.IOException
 import java.util.function.Consumer
 import javax.inject.Inject
@@ -13,12 +13,12 @@ import javax.inject.Inject
 class DetectorScreenProvider @Inject constructor(private val detectorViewFactory: DetectorViewFactory) : ScreenProvider {
 
     companion object {
-        private val logger = getLogger(DetectorScreenProvider::class.java)
+        private val logger by logger()
     }
 
     override fun getNode(fxml: String): Node = get(FXMLLoader(javaClass.getResource(fxml)))
 
-    override fun getNode(fxml: String, consumer: Consumer<ScreenController>) : Node =
+    override fun getNode(fxml: String, consumer: Consumer<ScreenController>): Node =
             get(FXMLLoader(javaClass.getResource(fxml)), consumer)
 
     @Suppress("UNCHECKED_CAST")

@@ -3,6 +3,7 @@ package pl.olszak.michal.view.navigation
 import javafx.fxml.FXMLLoader
 import javafx.scene.Node
 import javafx.scene.Parent
+import javafx.util.Callback
 import pl.olszak.michal.base.logger.logger
 import pl.olszak.michal.base.navigation.ScreenController
 import pl.olszak.michal.base.navigation.ScreenProvider
@@ -10,7 +11,8 @@ import java.io.IOException
 import java.util.function.Consumer
 import javax.inject.Inject
 
-class DetectorScreenProvider @Inject constructor(private val detectorViewFactory: DetectorViewFactory) : ScreenProvider {
+class DetectorScreenProvider @Inject constructor(
+        private val detectorViewFactory: Callback<Class<out ScreenController>, ScreenController>) : ScreenProvider {
 
     companion object {
         private val logger by logger()

@@ -7,7 +7,6 @@ import javax.inject.Inject
 import javax.inject.Provider
 import javax.inject.Singleton
 
-@Singleton
 class DetectorViewFactory @Inject constructor(
         private val creators: Map<Class<out ScreenController>, @JvmSuppressWildcards Provider<ScreenController>>
 ) : Callback<Class<out ScreenController>, ScreenController> {

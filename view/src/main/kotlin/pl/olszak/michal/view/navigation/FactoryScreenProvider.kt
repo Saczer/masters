@@ -10,9 +10,11 @@ import pl.olszak.michal.base.navigation.ScreenProvider
 import java.io.IOException
 import java.util.function.Consumer
 import javax.inject.Inject
+import javax.inject.Singleton
 
-class DetectorScreenProvider @Inject constructor(
-        private val detectorViewFactory: Callback<Class<out ScreenController>, ScreenController>) : ScreenProvider {
+@Singleton
+class FactoryScreenProvider @Inject constructor(
+        private val viewFactory: Callback<Class<out ScreenController>, ScreenController>) : ScreenProvider {
 
     companion object {
         private val logger by logger()
@@ -26,8 +28,9 @@ class DetectorScreenProvider @Inject constructor(
     @Suppress("UNCHECKED_CAST")
     private fun get(loader: FXMLLoader, consumer: Consumer<ScreenController>? = null): Node {
         loader.setControllerFactory {
-            detectorViewFactory.call(it as Class<out ScreenController>?)
+            viewFactory.call(it as Class<out ScreenController>?)
         }
+
         try {
             val parent: Parent = loader.load()
             val controller: ScreenController = loader.getController()

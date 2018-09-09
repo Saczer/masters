@@ -3,7 +3,7 @@ package pl.olszak.michal.detector.di.component
 import dagger.BindsInstance
 import dagger.Component
 import javafx.stage.Stage
-import pl.olszak.michal.detector.Detector
+import pl.olszak.michal.detector.DetectorApplication
 import pl.olszak.michal.detector.di.module.ApplicationModule
 import pl.olszak.michal.detector.di.module.ConcurrentModule
 import pl.olszak.michal.detector.di.module.NavigationModule
@@ -26,5 +26,5 @@ interface ApplicationComponent {
         fun build(): ApplicationComponent
     }
 
-    fun inject(detector: Detector)
+    fun inject(detectorApplication: DetectorApplication)
 }

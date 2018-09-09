@@ -24,4 +24,5 @@ ext {
     javaxInjectVersion = '1'
     slf4jVersion = '1.7.25'
     logbackVersion = '1.2.3'
+    kmongoVersion = '3.8.1'
 }

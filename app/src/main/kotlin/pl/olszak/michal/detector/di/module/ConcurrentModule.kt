@@ -3,7 +3,7 @@ package pl.olszak.michal.detector.di.module
 import dagger.Binds
 import dagger.Module
 import pl.olszak.michal.base.concurrent.MastersSchedulers
-import pl.olszak.michal.domain.concurrent.MastersSchedulersImp
+import pl.olszak.michal.base.domain.concurrent.MastersSchedulersImp
 import javax.inject.Singleton
 
 @Module

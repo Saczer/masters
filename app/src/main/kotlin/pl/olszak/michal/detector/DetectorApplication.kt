@@ -6,15 +6,15 @@ import javafx.stage.Stage
 import nu.pattern.OpenCV
 import org.opencv.core.Core
 import pl.olszak.michal.base.logger.logger
-import pl.olszak.michal.base.navigation.InitialNavigator
+import pl.olszak.michal.base.navigation.Navigator
 import pl.olszak.michal.detector.di.component.ApplicationComponent
 import pl.olszak.michal.detector.di.component.DaggerApplicationComponent
 import javax.inject.Inject
 
-class Detector : Application() {
+class DetectorApplication : Application() {
 
     @Inject
-    lateinit var initialNavigator: InitialNavigator
+    lateinit var navigator: Navigator
 
     private fun component(stage: Stage): ApplicationComponent {
         return DaggerApplicationComponent.builder()
@@ -26,7 +26,7 @@ class Detector : Application() {
         Platform.setImplicitExit(true)
         val component = component(primaryStage)
         component.inject(this)
-        initialNavigator.navigateToTestWindow()
+        navigator.navigateToMainWindow()
     }
 
     companion object {
@@ -42,7 +42,15 @@ class Detector : Application() {
 
         @JvmStatic
         fun main(args: Array<String>) {
-            launch(Detector::class.java, *args)
+            launch(DetectorApplication::class.java, *args)
         }
+    }
+
+    data class Something(val bool : Boolean? = null){
+
+        fun someFun(){
+            if(bool == true)
+        }
+
     }
 }

@@ -3,23 +3,18 @@ package pl.olszak.michal.detector.di.module
 import dagger.Binds
 import dagger.Module
 import javafx.util.Callback
-import pl.olszak.michal.base.navigation.InitialNavigator
 import pl.olszak.michal.base.navigation.ScreenController
 import pl.olszak.michal.base.navigation.ScreenProvider
-import pl.olszak.michal.view.navigation.DetectorInitialNavigator
-import pl.olszak.michal.view.navigation.DetectorScreenProvider
-import pl.olszak.michal.view.navigation.DetectorViewFactory
-import javax.inject.Singleton
+import pl.olszak.michal.view.navigation.FactoryScreenProvider
+import pl.olszak.michal.view.navigation.ViewFactory
 
 @Module
 abstract class ApplicationModule {
 
     @Binds
-    @Singleton
-    abstract fun bindScreenCallback(detectorViewFactory: DetectorViewFactory)
+    abstract fun bindScreenCallback(viewFactory: ViewFactory)
             : Callback<Class<out ScreenController>, ScreenController>
 
     @Binds
-    @Singleton
-    abstract fun bindScreenProvider(detectorScreenProvider: DetectorScreenProvider): ScreenProvider
+    abstract fun bindScreenProvider(factoryScreenProvider: FactoryScreenProvider): ScreenProvider
 }

@@ -6,8 +6,10 @@ import javafx.scene.layout.StackPane
 import javafx.stage.Stage
 import pl.olszak.michal.base.navigation.NodeController
 import javax.inject.Inject
+import javax.inject.Singleton
 
-class DetectorNodeController @Inject constructor(stage: Stage) : NodeController {
+@Singleton
+class ApplicationNodeController @Inject constructor(stage: Stage) : NodeController {
 
     companion object {
         private const val WIDTH = 500.0

@@ -6,10 +6,8 @@ repositories {
 
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlinVersion"
-    implementation "org.slf4j:slf4j-api:$slf4jVersion"
-    implementation "javax.inject:javax.inject:$javaxInjectVersion"
-    implementation "io.reactivex.rxjava2:rxjava:$rxJavaVersion"
-    implementation "io.reactivex.rxjava2:rxjavafx:$rxFxVersion"
+    implementation "org.litote.kmongo:kmongo-rxjava2:$kmongoVersion"
+    implementation "org.litote.kmongo:kmongo:$kmongoVersion"
 }
 
 compileKotlin {

@@ -1,4 +1,4 @@
-package pl.olszak.michal.domain
+package pl.olszak.michal.base.domain
 
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.disposables.Disposable

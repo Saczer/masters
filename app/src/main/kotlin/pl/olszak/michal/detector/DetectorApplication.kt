@@ -45,12 +45,4 @@ class DetectorApplication : Application() {
             launch(DetectorApplication::class.java, *args)
         }
     }
-
-    data class Something(val bool : Boolean? = null){
-
-        fun someFun(){
-            if(bool == true)
-        }
-
-    }
 }
